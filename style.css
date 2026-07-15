@@ -1,0 +1,319 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --bg-color: #ffffff;
+    --card-bg: #f8f9fa;
+    --text-color: #333333;
+    --light-text: #666666;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+}
+
+/* Profil Başlık Alanı */
+.profil-baslik {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.profil-bilgi {
+    flex: 1;
+    min-width: 300px;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+}
+
+.profil-ozet {
+    color: var(--light-text);
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.profil-foto {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Genel Başlıklar */
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 8px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* İletişim Butonları */
+.iletisim-linkleri {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.iletisim-linkleri a {
+    background-color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.iletisim-linkleri a:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Proje Kartları */
+.proje-kartlari {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.kart {
+    background-color: var(--card-bg);
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+}
+
+.kart h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+/* Deneyim Listesi */
+.deneyim-item {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.deneyim-item::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 5px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+.deneyim-item h3 {
+    margin: 0 0 5px 0;
+    color: var(--primary-color);
+}
+
+.deneyim-tarih {
+    font-style: italic;
+    color: var(--light-text);
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+}
+
+/* Başarılar Listesi */
+.basari-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+    transition: transform 0.2s ease;
+}
+
+.basari-item:hover {
+    transform: translateX(5px);
+}
+
+.basari-rozet {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.basari-item h3 {
+    margin: 0 0 5px 0;
+    color: var(--primary-color);
+}
+
+.basari-item p {
+    margin: 0;
+    color: var(--light-text);
+}
+
+/* Liste ve Footer */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+footer {
+    margin-top: 60px;
+    text-align: center;
+    color: var(--light-text);
+    font-size: 0.9rem;
+    border-top: 1px solid #eaeaea;
+    padding-top: 20px;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 600px) {
+    .profil-baslik {
+        text-align: center;
+        flex-direction: column-reverse;
+    }
+    
+    .iletisim-linkleri {
+        justify-content: center;
+    }
+}
+/* Gece Modu Renkleri */
+body.dark-mode {
+    --primary-color: #ecf0f1;
+    --secondary-color: #bdc3c7;
+    --accent-color: #3498db;
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --light-text: #a0a0a0;
+}
+
+/* Tema Butonu Stili (Sol üste sabitlenmiş) */
+#tema-degistir {
+    position: fixed; /* Sayfayı kaydırsan bile sol üstte sabit kalmasını sağlar */
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Diğer tüm elementlerin üstünde görünmesi için */
+    
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+#tema-degistir:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+/* Gece Modunda İletişim Butonlarının Yazı Rengi */
+body.dark-mode .iletisim-linkleri a {
+    color: var(--bg-color); /* Yazıyı koyu arka plan rengine eşitliyoruz */
+    font-weight: bold;
+}
+
+body.dark-mode .iletisim-linkleri a:hover {
+    background-color: var(--accent-color);
+    color: white; /* Üzerine gelindiğinde tekrar beyaz okunaklı yazı */
+}
+/* Dil Değiştirme Butonu Stili (Sağ üste sabitlenmiş) */
+#dil-degistir {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none; /* Linkin alt çizgisini kaldırır */
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+#dil-degistir:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+/* İletişim Formu Stilleri */
+.iletisim-formu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+.iletisim-formu input,
+.iletisim-formu textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.iletisim-formu input:focus,
+.iletisim-formu textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-buton {
+    background-color: var(--primary-color);
+    color: var(--bg-color); /* Gündüz modunda beyaz, gece modunda koyu renk metin yapar */
+    font-family: inherit; /* Sitenin ana modern fontunu butona da uygular */
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    align-self: flex-start;
+}
+
+.form-buton:hover {
+    background-color: var(--accent-color);
+    color: white; /* Üzerine gelindiğinde yazıyı okunabilir tutar */
+    transform: translateY(-2px);
+}
