@@ -194,13 +194,20 @@ footer {
 
 /* Responsive Tasarım */
 @media (max-width: 600px) {
-    .profil-baslik {
-        text-align: center;
-        flex-direction: column-reverse;
+    #tema-degistir,
+    #dil-degistir {
+        top: 10px;
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        border-width: 1px;
     }
-    
-    .iletisim-linkleri {
-        justify-content: center;
+
+    #tema-degistir {
+        left: 10px;
+    }
+
+    #dil-degistir {
+        right: 10px;
     }
 }
 /* Gece Modu Renkleri */
