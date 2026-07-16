@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <button id="tema-degistir">🌙 Gece Modu</button>
-    <a href="en.html" id="dil-degistir">🇬🇧 EN</a>
+    <button id="tema-degistir"><span class="tema-icon">🌙</span><span class="tema-yazi"> Gece Modu</span></button>
+    <a href="en.html" id="dil-degistir"><span class="dil-icon">🇬🇧</span><span class="dil-yazi"> EN</span></a>
     <header class="profil-baslik">
         <div class="profil-bilgi">
             <h1>Merhaba, ben Emir Oruç</h1>
@@ -179,12 +179,10 @@
 </body>
 <script>
     const temaButonu = document.getElementById("tema-degistir");
-
-    // Sayfa yüklendiğinde tarayıcı hafızasına bak
     const kayitliTema = localStorage.getItem("tema");
     if (kayitliTema === "dark") {
         document.body.classList.add("dark-mode");
-        temaButonu.textContent = "☀️ Gündüz Modu";
+        temaButonu.innerHTML = '<span class="tema-icon">☀️</span><span class="tema-yazi"> Gündüz Modu</span>';
     }
 
     temaButonu.addEventListener("click", () => {
@@ -192,7 +190,9 @@
         const geceModuAktif = document.body.classList.contains("dark-mode");
 
         localStorage.setItem("tema", geceModuAktif ? "dark" : "light");
-        temaButonu.textContent = geceModuAktif ? "☀️ Gündüz Modu" : "🌙 Gece Modu";
+        temaButonu.innerHTML = geceModuAktif
+            ? '<span class="tema-icon">☀️</span><span class="tema-yazi"> Gündüz Modu</span>'
+            : '<span class="tema-icon">🌙</span><span class="tema-yazi"> Gece Modu</span>';
     });
 </script>
 

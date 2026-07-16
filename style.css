@@ -52,7 +52,7 @@ h1 {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--primary-color);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Genel Başlıklar */
@@ -103,7 +103,7 @@ h2 {
 
 .kart:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
 }
 
 .kart h3 {
@@ -194,12 +194,27 @@ footer {
 
 /* Responsive Tasarım */
 @media (max-width: 600px) {
+    .profil-baslik {
+        text-align: center;
+        flex-direction: column-reverse;
+    }
+
+    .iletisim-linkleri {
+        justify-content: center;
+    }
+
     #tema-degistir,
     #dil-degistir {
         top: 10px;
-        padding: 6px 10px;
-        font-size: 0.75rem;
-        border-width: 1px;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
     }
 
     #tema-degistir {
@@ -209,7 +224,13 @@ footer {
     #dil-degistir {
         right: 10px;
     }
+
+    .tema-yazi,
+    .dil-yazi {
+        display: none;
+    }
 }
+
 /* Gece Modu Renkleri */
 body.dark-mode {
     --primary-color: #ecf0f1;
@@ -223,11 +244,13 @@ body.dark-mode {
 
 /* Tema Butonu Stili (Sol üste sabitlenmiş) */
 #tema-degistir {
-    position: fixed; /* Sayfayı kaydırsan bile sol üstte sabit kalmasını sağlar */
+    position: fixed;
+    /* Sayfayı kaydırsan bile sol üstte sabit kalmasını sağlar */
     top: 20px;
     left: 20px;
-    z-index: 1000; /* Diğer tüm elementlerin üstünde görünmesi için */
-    
+    z-index: 1000;
+    /* Diğer tüm elementlerin üstünde görünmesi için */
+
     background-color: var(--bg-color);
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
@@ -243,29 +266,34 @@ body.dark-mode {
     background-color: var(--primary-color);
     color: var(--bg-color);
 }
+
 /* Gece Modunda İletişim Butonlarının Yazı Rengi */
 body.dark-mode .iletisim-linkleri a {
-    color: var(--bg-color); /* Yazıyı koyu arka plan rengine eşitliyoruz */
+    color: var(--bg-color);
+    /* Yazıyı koyu arka plan rengine eşitliyoruz */
     font-weight: bold;
 }
 
 body.dark-mode .iletisim-linkleri a:hover {
     background-color: var(--accent-color);
-    color: white; /* Üzerine gelindiğinde tekrar beyaz okunaklı yazı */
+    color: white;
+    /* Üzerine gelindiğinde tekrar beyaz okunaklı yazı */
 }
+
 /* Dil Değiştirme Butonu Stili (Sağ üste sabitlenmiş) */
 #dil-degistir {
     position: fixed;
     top: 20px;
     right: 20px;
     z-index: 1000;
-    
+
     background-color: var(--bg-color);
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
     padding: 8px 16px;
     border-radius: 6px;
-    text-decoration: none; /* Linkin alt çizgisini kaldırır */
+    text-decoration: none;
+    /* Linkin alt çizgisini kaldırır */
     font-weight: 600;
     font-size: 0.9rem;
     transition: all 0.3s ease;
@@ -275,6 +303,7 @@ body.dark-mode .iletisim-linkleri a:hover {
     background-color: var(--primary-color);
     color: var(--bg-color);
 }
+
 /* İletişim Formu Stilleri */
 .iletisim-formu {
     display: flex;
@@ -307,8 +336,10 @@ body.dark-mode .iletisim-linkleri a:hover {
 
 .form-buton {
     background-color: var(--primary-color);
-    color: var(--bg-color); /* Gündüz modunda beyaz, gece modunda koyu renk metin yapar */
-    font-family: inherit; /* Sitenin ana modern fontunu butona da uygular */
+    color: var(--bg-color);
+    /* Gündüz modunda beyaz, gece modunda koyu renk metin yapar */
+    font-family: inherit;
+    /* Sitenin ana modern fontunu butona da uygular */
     border: none;
     padding: 14px 20px;
     border-radius: 8px;
@@ -321,6 +352,7 @@ body.dark-mode .iletisim-linkleri a:hover {
 
 .form-buton:hover {
     background-color: var(--accent-color);
-    color: white; /* Üzerine gelindiğinde yazıyı okunabilir tutar */
+    color: white;
+    /* Üzerine gelindiğinde yazıyı okunabilir tutar */
     transform: translateY(-2px);
 }
